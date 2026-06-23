@@ -1,0 +1,79 @@
+---
+import LeafDecor from './LeafDecor.astro';
+
+const events = [
+  {
+    year: '2023',
+    title: '文転、大学進学',
+    description: '理系から文系へ転向し、明治大学 情報コミュニケーション学部へ進学。情報とコミュニケーションの交差点に可能性を感じた。',
+    code: 'init()',
+  },
+  {
+    year: '2024',
+    title: 'ハッカソン参加開始 / AtCoder部を立ち上げ',
+    description: 'ハッカソンに参加し始め、異なるチームで課題解決を繰り返す。学内でAtCoder部を立ち上げ、仲間と切磋琢磨する環境を作る。',
+    code: 'team.join()',
+  },
+  {
+    year: '2025',
+    title: '要件定義賞 ×3 / Synapse 開発',
+    description: 'ハッカソンで要件定義賞を3回受賞。「何を作るか」の議論をチームで丁寧にやることが、プロダクトの質を上げると体感した。チームの状態を可視化するSynapseを開発。',
+    code: 'award.push(×3)',
+  },
+  {
+    year: '2026',
+    title: '現在 — Clavesを目指す',
+    description: 'フルリモート・プライム案件・自社チームで全工程という環境で、ゴールから考えるエンジニアリングを実践したい。',
+    code: 'next.goal()',
+    current: true,
+  },
+];
+---
+
+<section id="timeline" class="relative py-24 px-6 md:px-12 lg:px-24 bg-emerald-50 overflow-hidden">
+  <LeafDecor class="absolute top-0 left-0 pointer-events-none" size={160} rotate={120} opacity={0.08} />
+  <LeafDecor class="absolute bottom-0 right-0 pointer-events-none" size={160} rotate={-60} opacity={0.07} />
+
+  <div class="relative max-w-3xl mx-auto">
+    <p class="font-mono text-emerald-600 text-sm mb-2">// story</p>
+    <h2 class="text-3xl md:text-4xl font-bold mb-16" style="color: var(--color-forest-950)">自分史</h2>
+
+    <div class="relative">
+      <!-- Vine line (植物的なライン) -->
+      <svg class="absolute left-[26px] top-0 bottom-0 pointer-events-none" width="4" style="height:100%" viewBox="0 0 4 600" preserveAspectRatio="none">
+        <path d="M2 0 Q4 75 2 150 Q0 225 2 300 Q4 375 2 450 Q0 525 2 600"
+          stroke="#6ee7b7" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+      </svg>
+
+      <div class="space-y-12">
+        {events.map((event) => (
+          <div class="flex gap-8 relative">
+            <!-- Leaf node -->
+            <div class="flex-shrink-0 w-14 flex items-start justify-center pt-1">
+              {event.current ? (
+                <div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-white shadow-md flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-emerald-400 mt-0.5">
+                  <path d="M12 21C12 21 4 15 4 9a8 8 0 0 1 16 0c0 6-8 12-8 12z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="12" y1="9" x2="12" y2="19" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                </svg>
+              )}
+            </div>
+
+            <!-- Content -->
+            <div class={`pb-2 flex-1 ${event.current ? 'bg-white rounded-xl p-5 shadow-sm border border-emerald-100' : ''}`}>
+              <div class="flex items-center gap-3 mb-1">
+                <span class={`font-mono text-sm font-bold ${event.current ? 'text-emerald-600' : 'text-emerald-500'}`}>{event.year}</span>
+                <span class="font-mono text-xs" style="color: var(--color-forest-400)">{event.code}</span>
+              </div>
+              <h3 class="text-base font-semibold mb-2" style="color: var(--color-forest-800)">{event.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: var(--color-forest-600)">{event.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

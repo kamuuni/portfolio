@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* テキストカラー */
+  --color-forest-950: #111f17;  /* 見出し：ほぼ黒だが深緑がかった */
+  --color-forest-800: #1e3a2a;  /* サブ見出し */
+  --color-forest-600: #3d6651;  /* ボディテキスト */
+  --color-forest-400: #6b9e84;  /* セカンダリテキスト */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-stone-50 antialiased;
+    font-family: "Yu Gothic", "YuGothic", "Yu Gothic Medium", "游ゴシック", "游ゴシック体",
+      "Noto Sans JP", sans-serif;
+    font-weight: 500; /* 遊ゴシックは500指定でRegular相当に見える */
+    color: var(--color-forest-600);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--color-forest-950);
+  }
+  code, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  }
+}
