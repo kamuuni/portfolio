@@ -1,0 +1,50 @@
+---
+import LeafDecor from './LeafDecor.astro';
+---
+
+<section id="about" class="relative py-24 px-6 md:px-12 lg:px-24 bg-white overflow-hidden">
+  <LeafDecor class="absolute top-0 right-0 pointer-events-none" size={180} rotate={30} opacity={0.06} />
+
+  <div class="relative max-w-4xl mx-auto">
+    <!-- 大きいタイトル -->
+    <h2 class="text-5xl md:text-6xl font-bold text-center mb-16" style="color: var(--color-forest-950)">
+      About me
+    </h2>
+
+    <!-- 左: 写真 / 右: テキスト -->
+    <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+      <!-- 写真 -->
+      <div class="flex-shrink-0 flex justify-center w-full md:w-auto">
+        <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 shadow-lg" style="border-color: #c8ddd3">
+          <img src="/hero2.jpg" alt="Kai Kanesaka" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- テキスト -->
+      <div class="flex-1">
+        <p class="text-lg leading-relaxed mb-6" style="color: var(--color-forest-600)">
+          エンジニア志望、明治大学 情報コミュニケーション学部 3年生（千葉県在住）。理系によく間違われますが文系の学部です。プログラミングは学生プログラミングコミュニティPOSSEにておもにweb製作分野を毎週10時間学習。
+        </p>
+        <p class="text-lg leading-relaxed mb-8" style="color: var(--color-forest-600)">
+          また二年間で８回のハッカソンを経験し、うち、優勝１回。要件定義賞３回を獲得しました。
+        </p>
+
+        <!-- リンク -->
+        <div class="space-y-2 text-base" style="color: var(--color-forest-600)">
+          <p>- GitHub:
+            <a href="https://github.com/kamuuni" target="_blank" rel="noopener noreferrer"
+              class="text-emerald-600 hover:text-emerald-800 underline underline-offset-4 transition-colors">
+              https://github.com/kamuuni
+            </a>
+          </p>
+          <p>- Email:
+            <a href="mailto:kaikanesaka@gmail.com"
+              class="text-emerald-600 hover:text-emerald-800 underline underline-offset-4 transition-colors">
+              kaikanesaka@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

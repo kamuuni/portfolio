@@ -1,0 +1,17 @@
+---
+import LeafDecor from './LeafDecor.astro';
+import WorksModal from './WorksModal';
+---
+
+<section id="works" class="relative py-24 px-6 md:px-12 lg:px-24 bg-stone-50 overflow-hidden">
+  <LeafDecor class="absolute -bottom-10 -right-10 pointer-events-none" size={220} rotate={-30} opacity={0.06} />
+
+  <div class="relative max-w-5xl mx-auto">
+    <h2 class="text-5xl md:text-6xl font-bold text-center mb-4" style="color: var(--color-forest-950)">Works</h2>
+    <p class="text-center mb-16" style="color: var(--color-forest-400)">
+      腕によりをかけて制作した、愛すべき成果物たちをご紹介します。
+    </p>
+
+    <WorksModal client:load />
+  </div>
+</section>
